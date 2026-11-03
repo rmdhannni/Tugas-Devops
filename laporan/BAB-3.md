@@ -2,7 +2,7 @@
 
 **KELOMPOK 2**
 
-![](images/image-001.png)
+![](../assets/BAB-3/image-001.png)
 
 **Disusun untuk Memenuhi Tugas**
 
@@ -50,7 +50,7 @@ Seluruh proses instalasi, konfigurasi, dan pengujian Docker dilakukan melalui te
 
 Mengonfigurasi jaringan bridge terisolasi kustom dengan subnet 172.20.0.0/16 untuk menguji ketersediaan fitur _Embedded DNS Server_ internal Docker (127.0.0.11) dalam melakukan penyelesaian nama hostname antar-container secara otomatis.
 
-![](images/image-002.png)
+![](../assets/BAB-3/image-002.png)
 
 **_Gambar 1.1 Pembuatan jaringan lab-net, deployment server-a & server-b, serta hasil ping sukses menggunakan hostname._**
 
@@ -60,7 +60,7 @@ Container server-a berhasil mengirim paket ICMP ping ke server-b (IP 172.20.0.3)
 
 Pengujian daya tahan data menggunakan _Named Volume_ dengan menuliskan catatan log waktu berkala, dilanjutkan dengan penghapusan container penulis dan pengarsipan backup berbasis tar.
 
-![](images/image-003.png)
+![](../assets/BAB-3/image-003.png)
 
 **_Gambar 1.2 Verifikasi integritas data log setelah penghapusan container writer dan kompresi file backup tar.gz._**
 
@@ -70,7 +70,7 @@ Data log berturut-turut yang dibuat oleh container writer tetap dapat dibaca sec
 
 Penyusunan berkas deklaratif docker-compose.yml yang mengoordinasikan tiga microservices: Nginx Web Proxy (web), Python Backend API (app), dan PostgreSQL Database (db) dilengkapi pengujian healthcheck.
 
-![](images/image-004.png)
+![](../assets/BAB-3/image-004.png)
 
 **_Gambar 1.3 Editor Nano menampilkan manifes docker-compose.yml dengan environment, volumes, & healthcheck._**
 
@@ -78,7 +78,7 @@ Penyusunan berkas deklaratif docker-compose.yml yang mengoordinasikan tiga micro
 
 **3.3.1 Service Discovery pada User-Defined Bridge (my-net)**
 
-**![](images/image-005.png)**
+**![](../assets/BAB-3/image-005.png)**
 
 **_Gambar 3.1 Pengujian ping dari container ephemeral ke box1 (172.18.0.2) via nama alias pada jaringan my-net._**
 
@@ -86,7 +86,7 @@ Perintah pada Gambar 3.1 membuktikan bahwa container terpisah yang terhubung pad
 
 **3.3.2 Persistensi Named Volume Setelah Container Removal**
 
-**![](images/image-006.png)**
+**![](../assets/BAB-3/image-006.png)**
 
 **_Gambar 2.3 Pembacaan kembali teks Hello Proxmox dari data-vol setelah container vol-test dihapus._**
 
@@ -94,7 +94,7 @@ Data yang ditulis ke /app/data/test.txt berada di direktori khusus host (/var/li
 
 **3.3.3 Live Development Hot-Reloading via Bind Mount**
 
-**![](images/image-007.png)**
+**![](../assets/BAB-3/image-007.png)**
 
 **_Gambar 3.3 Respon curl berubah seketika menjadi Versi 2 Update saat file index.html di host dimodifikasi._**
 
@@ -102,7 +102,7 @@ Bind Mount mengikat direktori host ~/html-bind secara langsung ke web root Nginx
 
 **3.3.4 Pengujian Storage Volatile / In-Memory (tmpfs)**
 
-**![](images/image-008.png)**
+**![](../assets/BAB-3/image-008.png)**
 
 **_Gambar 3.4 File secret.txt terhapus setelah container tmpfs-test di-restart._**
 
@@ -110,7 +110,7 @@ Storage tmpfs dialokasikan pada RAM host. Ketika container di-restart, memori di
 
 **3.3.5 Multi-Container Deployment & Healthcheck Verification**
 
-**![](images/image-009.png)**
+**![](../assets/BAB-3/image-009.png)**
 
 **_Gambar 3.5 Output docker compose ps menunjukkan status Up dan Database berstatus (healthy)._**
 

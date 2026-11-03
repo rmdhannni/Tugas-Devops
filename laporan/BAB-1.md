@@ -2,7 +2,7 @@
 
 **BAB I**
 
-![](images/image-001.png)
+![](../assets/BAB-1/image-001.png)
 
 **Disusun untuk Memenuhi Tugas**
 
@@ -50,7 +50,7 @@ Seluruh proses instalasi, konfigurasi, dan pengujian Docker dilakukan melalui te
 
 Langkah awal dijalankan pada mesin host ubuntu-2@ubn-2 dengan membuat direktori kerja tunggal ~/devsecops-lab/ yang memiliki sub-direktori khusus terpisah sesuai peruntukannya. Kemudian lakukan pemeriksaan versi docker dilakukan untuk mencatat baseline environment.
 
-![](images/image-002.png)
+![](../assets/BAB-1/image-002.png)
 
 **1.3 Verifikasi dan Skenario Pengujian**
 
@@ -58,19 +58,19 @@ Langkah awal dijalankan pada mesin host ubuntu-2@ubn-2 dengan membuat direktori 
 
 Pengujian dilakukan untuk memastikan akun praktikum (ubuntu-2) dapat berkomunikasi langsung dengan Docker daemon tanpa perlunya perantara hak akses eksternal, serta memverifikasi kesiapan plugin Compose:
 
-**![](images/image-003.png)**
+**![](../assets/BAB-1/image-003.png)**
 
 **1.3.2 Pengujian Skenario Isolasi Web Root**
 
 Skenario pengujian dikembangkan untuk membuktikan bahwa direktori reports, sbom, dan keys aman dari akses publik dan tidak terpapar saat aplikasi web mempublikasikan direktori app/.
 
-**![](images/image-004.png)**
+**![](../assets/BAB-1/image-004.png)**
 
 **1.3.3 Pemeriksaan Fitur Keamanan Host Kernel** 
 
 Opsi keamanan yang aktif pada host Linux diperiksa menggunakan format JSON untuk mengetahui profil pembatasan sistem (Mandatory Access Control):
 
-**![](images/image-005.png)**
+**![](../assets/BAB-1/image-005.png)**
 
 **1.3.4  Threat Statement Praktikum Baseline**
 

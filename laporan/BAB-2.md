@@ -2,7 +2,7 @@
 
 **KELOMPOK 2**
 
-![](images/image-001.png)
+![](../assets/BAB-2/image-001.png)
 
 **Disusun untuk Memenuhi Tugas**
 
@@ -50,7 +50,7 @@ Seluruh proses instalasi, konfigurasi, dan pengujian Docker dilakukan melalui te
 
 Langkah awal praktikum dimulai dengan menyiapkan direktori kerja yang terisolasi untuk mengorganisir seluruh file konfigurasi dan dependensi praktikum Docker Bab 02. Perintah mkdir -p digunakan untuk membuat direktori secara bertingkat.
 
-![](images/image-002.png)
+![](../assets/BAB-2/image-002.png)
 
 **_Gambar 1.1 Pembuatan direktori kerja ~/docker-lab/bab-2 dan navigasi workspace._**
 
@@ -60,7 +60,7 @@ Direktori docker-lab/bab-2 berhasil dibuat di bawah direktori home user. Penguji
 
 Sebelum menambahkan repository resmi Docker Engine, sistem perlu diperbarui dengan paket dependensi dasar yang dibutuhkan untuk komunikasi jaringan HTTPS, manajemen sertifikat, serta kunci enkripsi GPG.
 
-![](images/image-003.png)
+![](../assets/BAB-2/image-003.png)
 
 **_Gambar 1.2 Pengunduhan paket ca-certificates, curl, gnupg, lsb-release, dan pembuatan folder keyrings._**
 
@@ -70,7 +70,7 @@ Paket ca-certificates, curl, gnupg, dan lsb-release terverifikasi telah berada p
 
 Untuk menjamin integritas dan autentisitas paket perangkat lunak Docker yang diunduh via APT, kunci GPG resmi Docker diunduh dan disimpan ke dalam direktori keyrings, kemudian entri repository ditambahkan ke dalam skema paket APT Ubuntu.
 
-![](images/image-004.png)
+![](../assets/BAB-2/image-004.png)
 
 **_Gambar 2.1 Pembaruan izin baca kunci GPG dan penambahan repositori resmi Docker ke APT sources._**
 
@@ -80,7 +80,7 @@ Berkas docker.gpg berhasil diatur dengan hak akses publik baca (a+r). Penambahan
 
 Secara default, Docker Daemon berjalan di bawah hak akses akun root. Agar pengguna biasa dapat menjalankan perintah Docker tanpa menyertakan instruksi sudo pada setiap eksekusi, user ditambahkan ke dalam Unix group docker.
 
-![](images/image-005.png)
+![](../assets/BAB-2/image-005.png)
 
 **_Gambar 2.2 Penambahan user aktif ke unix group docker dan penyegaran hak akses via newgrp._**
 
@@ -90,7 +90,7 @@ Akun pengguna ubuntu-2 berhasil dimasukkan ke dalam grup docker. Penggunaan peri
 
 Guna memastikan bahwa Docker Daemon telah aktif dan dapat berkomunikasi dengan CLI client secara normal, dilakukan pengecekan arsitektur dan versi komponen Docker Engine.
 
-![](images/image-006.png)
+![](../assets/BAB-2/image-006.png)
 
 **_Gambar 2.3 Verifikasi versi Docker Engine (Client v29.8.1 & Server v29.8.1, containerd v2.3.5)._**
 
@@ -100,7 +100,7 @@ Perintah docker version menampilkan informasi lengkap mengenai Client dan Server
 
 Praktikum dilanjutkan dengan mengunduh (pull) image resmi Nginx versi 1.26 dari Docker Hub, kemudian menjalankan container dalam mode terisolasi di latar belakang (detached mode -d) serta memetakan port host 8080 ke port 80 milik container.
 
-![](images/image-007.png)
+![](../assets/BAB-2/image-007.png)
 
 **_Gambar 3.1 Pengunduhan image Nginx 1.26, eksekusi container web-public, dan pemeriksaan log proses._**
 
@@ -110,9 +110,9 @@ Image nginx:1.26 berhasil diunduh. Container dinamai web-public dan berstatus Up
 
 Untuk memverifikasi konektivitas layanan web yang berjalan di dalam container, pengujian dilakukan melalui dua pendekatan: panggilan HTTP menggunakan command curl dan pengujian antarmuka melalui Web Browser.
 
-![](images/image-008.png)
+![](../assets/BAB-2/image-008.png)
 
-![](images/image-009.png)
+![](../assets/BAB-2/image-009.png)
 
 **_Gambar 3.2 Tampilan verifikasi halaman web Nginx "Welcome to nginx!" yang diakses via browser pada IP 10.252.108.103:8080._**
 
@@ -122,7 +122,7 @@ Hasil command curl http://localhost:8080 mengembalikan struktur dokumen HTML res
 
 Docker memungkinkan pembentukan lingkungan sistem operasi terisolasi secara cepat. Command pada gambar 4.1 digunakan untuk masuk ke dalam sesi terminal interaktif container Ubuntu.
 
-![](images/image-010.png)
+![](../assets/BAB-2/image-010.png)
 
 **_Gambar 4.1 Pengujian respon curl localhost dan eksekusi container interaktif Ubuntu 22.04 LTS._**
 
@@ -132,7 +132,7 @@ Command tersebut berhasil berjalan dan terhubung dengan akun root@932486173c62:/
 
 Praktikum dilanjutkan dengan membangun Custom Docker Image berbasis nginx:1.26-alpine yang memuat halaman web kustom ciptaan sendiri melalui instruksi spesifik pada berkas Dockerfile.
 
-![](images/image-011.png)
+![](../assets/BAB-2/image-011.png)
 
 **_Gambar 4.2 Pembuatan Dockerfile, proses docker build pens-web:1.0, eksekusi pens-app port 9090, dan pengujian curl._**
 
@@ -142,7 +142,7 @@ Proses build image pens-web:1.0 berhasil. Container pens-app di-deploy pada port
 
 Untuk membuktikan ketersediaan custom web application bagi pengguna luar, pengujian dilakukan dengan membuka antarmuka browser pada alamat IP Host http://10.252.108.103:9090.
 
-![](images/image-012.png)
+![](../assets/BAB-2/image-012.png)
 
 **_Gambar 5.1 Pengujian akses browser ke Custom Web Server pens-web:1.0 melalui IP Host 10.252.108.103:9090._**
 
