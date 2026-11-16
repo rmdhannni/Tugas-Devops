@@ -2,7 +2,7 @@
 
 **Mata Kuliah:** Workshop DevOps  
 **Dosen Pengampu:** Dr. Ferry Astika Saputra, ST, M.Sc  
-**Disusun Oleh:** Vernanda Mulia Hamonangan Manurung (NRP. 3126640044)  
+**Disusun Oleh:** Yusuf Rahmadhani Asy'Ari (NRP. 3126640042)  
 **Program Studi:** D4 Lanjut Jenjang Teknik Informatika  
 **Institusi:** Politeknik Elektronika Negeri Surabaya (2026)
 
