@@ -1,5 +1,5 @@
 # BAB VI (STUDI KASUS): CENTRALIZED LOGGING & INCIDENT RESPONSE PMB DEVSECOPS LABORATORY
-
+![](../assets/BAB-01/image-001.png)
 **Mata Kuliah:** Workshop DevOps  
 **Dosen Pengampu:** Dr. Ferry Astika Saputra, ST, M.Sc  
 **Disusun Oleh:** Yusuf Rahmadhani Asy'Ari (NRP. 3126640042)  
