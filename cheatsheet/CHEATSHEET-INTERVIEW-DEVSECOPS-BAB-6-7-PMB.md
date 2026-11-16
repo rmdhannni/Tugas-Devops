@@ -9,7 +9,6 @@
 - [Bab 7 – Monitoring](#3-bab-7--monitoring)
 - [Studi Kasus Portal PMB](#4-studi-kasus-portal-pmb)
 - [Ringkasan istilah](#5-ringkasan-istilah)
-- [Strategi menjawab](#6-strategi-menjawab-penguji)
 
 ---
 
@@ -821,14 +820,6 @@ Nama dan email tidak dimasukkan ke structured log karena tidak diperlukan untuk 
 | Dead-letter queue | Penampung pesan yang gagal diproses |
 | SHA-256 | Hash untuk pemeriksaan integritas file |
 
-# 6. Strategi menjawab penguji
-
-Gunakan pola empat langkah pada setiap soal:
-
-1. **Demonstrasi:** jalankan perintah yang diminta.
-2. **Observasi:** sebutkan output aktual yang terlihat.
-3. **Analisis:** hubungkan konfigurasi, alur data, dan hasil.
-4. **Kesimpulan:** nyatakan apakah pengujian berhasil serta batas pembuktiannya.
 
 ## Checklist sebelum ujian
 
