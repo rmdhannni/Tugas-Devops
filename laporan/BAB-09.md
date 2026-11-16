@@ -1,4 +1,5 @@
 # BAB IX: IAM, OIDC, PKCE, DAN RBAC DENGAN KEYCLOAK
+![](../assets/BAB-01/image-001.png)
 
 **Mata Kuliah:** Workshop DevOps  
 **Dosen Pengampu:** Dr. Ferry Astika Saputra, ST, M.Sc  
