@@ -1,5 +1,3 @@
-<p align="center"><img src="../assets/logo-pens.png" alt="Logo PENS" width="150"></p>
-
 # BAB VI (STUDI KASUS): CENTRALIZED LOGGING & INCIDENT RESPONSE PMB DEVSECOPS LABORATORY
 
 **Mata Kuliah:** Workshop DevOps  
@@ -35,7 +33,7 @@ pwd
 ```
 
 
-<img src="../assets/bab-06-pmb/image2.png" alt="image2.png" width="646">
+<img src="../assets/BAB-06-PMB/image2.png" alt="image2.png" width="646">
 
 
 *Gambar 1.1 Hasil pemeriksaan lokasi direktori kerja proyek PMB DevSecOps Laboratory.*
@@ -66,7 +64,7 @@ find . -maxdepth 2 -type f \
 ```
 
 
-<img src="../assets/bab-06-pmb/image3.png" alt="image3.png" width="646">
+<img src="../assets/BAB-06-PMB/image3.png" alt="image3.png" width="646">
 
 
 *Gambar 1.2 Struktur berkas proyek hingga dua tingkat direktori.*
@@ -101,7 +99,7 @@ docker compose config --services
 ```
 
 
-<img src="../assets/bab-06-pmb/image4.png" alt="image4.png" width="646">
+<img src="../assets/BAB-06-PMB/image4.png" alt="image4.png" width="646">
 
 
 *Gambar 1.3 Daftar layanan utama dalam konfigurasi Docker Compose.*
@@ -129,7 +127,7 @@ sed -n '1,260p' compose.yaml
 ```
 
 
-<img src="../assets/bab-06-pmb/image5.png" alt="image5.png" width="646">
+<img src="../assets/BAB-06-PMB/image5.png" alt="image5.png" width="646">
 
 
 *Gambar 1.4 Pemeriksaan konfigurasi layanan pada berkas compose.yaml.*
@@ -140,7 +138,7 @@ sed -n '1,260p' fluent-bit/fluent-bit.conf
 ```
 
 
-<img src="../assets/bab-06-pmb/image6.png" alt="image6.png" width="646">
+<img src="../assets/BAB-06-PMB/image6.png" alt="image6.png" width="646">
 
 
 *Gambar 1.5 Pemeriksaan konfigurasi pengumpulan dan penerusan log pada fluent-bit.conf.*
@@ -170,7 +168,7 @@ docker compose config --quiet
 ```
 
 
-<img src="../assets/bab-06-pmb/image7.png" alt="image7.png" width="646">
+<img src="../assets/BAB-06-PMB/image7.png" alt="image7.png" width="646">
 
 
 *Gambar 2.1 Hasil validasi konfigurasi Docker Compose tanpa pesan kesalahan.*
@@ -205,7 +203,7 @@ sed -n '1,220p' scripts/setup.sh
 ```
 
 
-<img src="../assets/bab-06-pmb/image8.png" alt="image8.png" width="646">
+<img src="../assets/BAB-06-PMB/image8.png" alt="image8.png" width="646">
 
 
 *Gambar 2.2 Hasil pemeriksaan petunjuk dan pelaksanaan validasi otomatis aplikasi.*
@@ -232,7 +230,7 @@ docker compose ps
 ```
 
 
-<img src="../assets/bab-06-pmb/image9.png" alt="image9.png" width="646">
+<img src="../assets/BAB-06-PMB/image9.png" alt="image9.png" width="646">
 
 
 *Gambar 2.3 Status aktif seluruh kontainer setelah proses docker compose up.*
@@ -256,7 +254,7 @@ curl -i http://localhost:18080/healthz
 ```
 
 
-<img src="../assets/bab-06-pmb/image10.png" alt="image10.png" width="646">
+<img src="../assets/BAB-06-PMB/image10.png" alt="image10.png" width="646">
 
 
 *Gambar 2.4 Respons HTTP sukses pada pemeriksaan endpoint /healthz.*
@@ -279,7 +277,7 @@ curl -I http://localhost:18080
 ```
 
 
-<img src="../assets/bab-06-pmb/image11.png" alt="image11.png" width="646">
+<img src="../assets/BAB-06-PMB/image11.png" alt="image11.png" width="646">
 
 
 *Gambar 2.5 Tampilan halaman awal aplikasi PMB pada peramban web.*
@@ -305,7 +303,7 @@ http://localhost:18080
 ```
 
 
-<img src="../assets/bab-06-pmb/image12.png" alt="image12.png" width="646">
+<img src="../assets/BAB-06-PMB/image12.png" alt="image12.png" width="646">
 
 
 *Gambar 2.6 Tampilan antarmuka formulir pendaftaran mahasiswa baru.*
@@ -326,7 +324,7 @@ POST /register
 ```
 
 
-<img src="../assets/bab-06-pmb/image13.png" alt="image13.png" width="646">
+<img src="../assets/BAB-06-PMB/image13.png" alt="image13.png" width="646">
 
 
 *Gambar 2.7 Proses pengisian dan pengiriman data formulir pendaftaran.*
@@ -349,7 +347,7 @@ GET /status?request_id=...
 ```
 
 
-<img src="../assets/bab-06-pmb/image14.png" alt="image14.png" width="646">
+<img src="../assets/BAB-06-PMB/image14.png" alt="image14.png" width="646">
 
 
 *Gambar 2.8 Bukti pendaftaran dan konfirmasi status verifikasi VERIFIED.*
@@ -360,7 +358,7 @@ sed -n '1,260p' scripts/demo-normal.sh
 ```
 
 
-<img src="../assets/bab-06-pmb/image15.png" alt="image15.png" width="646">
+<img src="../assets/BAB-06-PMB/image15.png" alt="image15.png" width="646">
 
 
 *Gambar 3.1 Pemeriksaan isi skrip demonstrasi skenario pendaftaran normal.*
@@ -400,7 +398,7 @@ Request ID digunakan sebagai identitas permintaan agar aktivitas yang berkaitan 
 ```
 
 
-<img src="../assets/bab-06-pmb/image16.png" alt="image16.png" width="646">
+<img src="../assets/BAB-06-PMB/image16.png" alt="image16.png" width="646">
 
 
 *Gambar 3.2 Output eksekusi skrip demonstrasi skenario normal dengan status VERIFIED.*
@@ -430,7 +428,7 @@ docker compose logs --tail=100 verification-worker
 ```
 
 
-<img src="../assets/bab-06-pmb/image17.png" alt="image17.png" width="646">
+<img src="../assets/BAB-06-PMB/image17.png" alt="image17.png" width="646">
 
 
 *Gambar 3.3 Catatan log layanan registration-api, auth-service, dan verification-worker.*
@@ -457,7 +455,7 @@ docker compose logs --tail=100 fluent-bit
 ```
 
 
-<img src="../assets/bab-06-pmb/image18.png" alt="image18.png" width="646">
+<img src="../assets/BAB-06-PMB/image18.png" alt="image18.png" width="646">
 
 
 *Gambar 3.4 Pemeriksaan status kontainer dan log layanan Fluent Bit.*
@@ -489,7 +487,7 @@ sed -n '1,260p' scripts/demo-incident.sh
 ```
 
 
-<img src="../assets/bab-06-pmb/image19.png" alt="image19.png" width="646">
+<img src="../assets/BAB-06-PMB/image19.png" alt="image19.png" width="646">
 
 
 *Gambar 3.5 Hasil eksekusi demonstrasi skenario insiden (VERIFY-TIMEOUT).*
@@ -528,7 +526,7 @@ docker compose logs --since=10m --no-color \
 ```
 
 
-<img src="../assets/bab-06-pmb/image20.png" alt="image20.png" width="646">
+<img src="../assets/BAB-06-PMB/image20.png" alt="image20.png" width="646">
 
 
 *Gambar 3.6 Log layanan setelah insiden dan penyaringan baris kejadian kritis.*
@@ -557,7 +555,7 @@ sed -n '1,260p' init-log/01-init-log.sh
 ```
 
 
-<img src="../assets/bab-06-pmb/image21.png" alt="image21.png" width="646">
+<img src="../assets/BAB-06-PMB/image21.png" alt="image21.png" width="646">
 
 
 *Gambar 3.7 Pemeriksaan berkas query SQL analisis log dan skrip inisialisasi basis data log.*
@@ -579,7 +577,7 @@ sed -n '1,260p' scripts/recover-incident.sh
 ```
 
 
-<img src="../assets/bab-06-pmb/image22.png" alt="image22.png" width="646">
+<img src="../assets/BAB-06-PMB/image22.png" alt="image22.png" width="646">
 
 
 *Gambar 3.8 Hasil pengujian pemulihan layanan dan pengujian ulang skenario normal.*
@@ -607,7 +605,7 @@ docker compose ps
 ```
 
 
-<img src="../assets/bab-06-pmb/image23.png" alt="image23.png" width="646">
+<img src="../assets/BAB-06-PMB/image23.png" alt="image23.png" width="646">
 
 
 *Gambar 3.9 Hasil verifikasi akhir sistem dan status sehat seluruh kontainer.*

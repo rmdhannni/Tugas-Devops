@@ -1,5 +1,3 @@
-<p align="center"><img src="../assets/logo-pens.png" alt="Logo PENS" width="150"></p>
-
 # BAB IX: IAM, OIDC, PKCE, DAN RBAC DENGAN KEYCLOAK
 
 **Mata Kuliah:** Workshop DevOps  
@@ -27,7 +25,7 @@ cd ~/docker-lab/bab-09
 pwd
 ```
 
-<img src="../assets/bab-09/image2.png" alt="image2.png" width="646">
+<img src="../assets/BAB-09/image2.png" alt="image2.png" width="646">
 
 *Gambar 9.1 Pembuatan dan verifikasi struktur direktori kerja Bab 9.*
 
@@ -39,7 +37,7 @@ Dilakukan pembuatan file template `.env.example` menggunakan perintah `nano .env
 nano .env.example
 ```
 
-<img src="../assets/bab-09/image3.png" alt="image3.png" width="646">
+<img src="../assets/BAB-09/image3.png" alt="image3.png" width="646">
 
 *Gambar 9.2 Pembuatan file template konfigurasi .env.example menggunakan editor nano.*
 
@@ -48,7 +46,7 @@ ls -l .env.example
 cat .env.example
 ```
 
-<img src="../assets/bab-09/image4.png" alt="image4.png" width="646">
+<img src="../assets/BAB-09/image4.png" alt="image4.png" width="646">
 
 *Gambar 9.3 Pemeriksaan ukuran dan isi template variabel lingkungan .env.example.*
 
@@ -60,7 +58,7 @@ Diperlihatkan pembuatan file `.gitignore` menggunakan perintah `nano .gitignore`
 nano .gitignore
 ```
 
-<img src="../assets/bab-09/image5.png" alt="image5.png" width="646">
+<img src="../assets/BAB-09/image5.png" alt="image5.png" width="646">
 
 *Gambar 9.4 Pembuatan berkas pengabaian Git .gitignore menggunakan editor nano.*
 
@@ -70,7 +68,7 @@ ls -la .gitignore reports/
 cat .gitignore
 ```
 
-<img src="../assets/bab-09/image6.png" alt="image6.png" width="646">
+<img src="../assets/BAB-09/image6.png" alt="image6.png" width="646">
 
 *Gambar 9.5 Pembuatan .gitkeep, verifikasi keberadaan file, dan isi aturan .gitignore.*
 
@@ -82,7 +80,7 @@ Diperlihatkan pembuatan dan pemeriksaan isi file `.dockerignore` menggunakan per
 nano .dockerignore
 ```
 
-<img src="../assets/bab-09/image7.png" alt="image7.png" width="646">
+<img src="../assets/BAB-09/image7.png" alt="image7.png" width="646">
 
 *Gambar 9.6 Pembuatan aturan pembatasan build context pada .dockerignore menggunakan editor nano.*
 
@@ -90,7 +88,7 @@ nano .dockerignore
 cat .dockerignore
 ```
 
-<img src="../assets/bab-09/image8.png" alt="image8.png" width="646">
+<img src="../assets/BAB-09/image8.png" alt="image8.png" width="646">
 
 *Gambar 9.7 Verifikasi isi aturan .dockerignore untuk mengamankan proses build Docker.*
 
@@ -104,7 +102,7 @@ Dibuat file `realm/devsecops-lab-realm.json` menggunakan editor nano dan ditampi
 nano realm/devsecops-lab-realm.json
 ```
 
-<img src="../assets/bab-09/image9.png" alt="image9.png" width="646">
+<img src="../assets/BAB-09/image9.png" alt="image9.png" width="646">
 
 *Gambar 9.8 Konfigurasi deklaratif realm devsecops-lab pada realm/devsecops-lab-realm.json.*
 
@@ -112,7 +110,7 @@ nano realm/devsecops-lab-realm.json
 cat realm/devsecops-lab-realm.json
 ```
 
-<img src="../assets/bab-09/image10.png" alt="image10.png" width="646">
+<img src="../assets/BAB-09/image10.png" alt="image10.png" width="646">
 
 *Gambar 9.9 Verifikasi isi konfigurasi realm Keycloak sebagai kode.*
 
@@ -124,7 +122,7 @@ Dilakukan pembuatan file `app/requirements.txt` menggunakan editor nano dan dipe
 nano app/requirements.txt
 ```
 
-<img src="../assets/bab-09/image11.png" alt="image11.png" width="646">
+<img src="../assets/BAB-09/image11.png" alt="image11.png" width="646">
 
 *Gambar 9.10 Penulisan pustaka dependensi pada app/requirements.txt.*
 
@@ -132,7 +130,7 @@ nano app/requirements.txt
 cat app/requirements.txt
 ```
 
-<img src="../assets/bab-09/image12.png" alt="image12.png" width="646">
+<img src="../assets/BAB-09/image12.png" alt="image12.png" width="646">
 
 *Gambar 9.11 Verifikasi daftar pustaka terkunci Flask, Authlib, dan gunicorn.*
 
@@ -144,7 +142,7 @@ Dibuat kode aplikasi relying party pada file `app/app.py` yang kemudian diperiks
 nano app/app.py
 ```
 
-<img src="../assets/bab-09/image13.png" alt="image13.png" width="646">
+<img src="../assets/BAB-09/image13.png" alt="image13.png" width="646">
 
 *Gambar 9.12 Penulisan kode relying party Flask dengan dukungan OIDC dan PKCE pada app/app.py.*
 
@@ -153,7 +151,7 @@ wc -l app/app.py
 python3 -m py_compile app/app.py
 ```
 
-<img src="../assets/bab-09/image14.png" alt="image14.png" width="646">
+<img src="../assets/BAB-09/image14.png" alt="image14.png" width="646">
 
 *Gambar 9.13 Pemeriksaan jumlah baris (170 baris) dan kompilasi statis app/app.py.*
 
@@ -165,7 +163,7 @@ Dibuat file `app/Dockerfile` dengan metode multi-stage build berbasis `python:3.
 nano app/Dockerfile
 ```
 
-<img src="../assets/bab-09/image15.png" alt="image15.png" width="646">
+<img src="../assets/BAB-09/image15.png" alt="image15.png" width="646">
 
 *Gambar 9.14 Penulisan instruksi multi-stage build dan pengerasan non-root pada app/Dockerfile.*
 
@@ -173,7 +171,7 @@ nano app/Dockerfile
 cat app/Dockerfile
 ```
 
-<img src="../assets/bab-09/image16.png" alt="image16.png" width="646">
+<img src="../assets/BAB-09/image16.png" alt="image16.png" width="646">
 
 *Gambar 9.15 Verifikasi konfigurasi builder dan runtime non-root UID 10001 pada app/Dockerfile.*
 
@@ -187,7 +185,7 @@ Layanan keycloak dijalankan dengan perintah `start-dev --import-realm` untuk men
 nano compose.yaml
 ```
 
-<img src="../assets/bab-09/image17.png" alt="image17.png" width="646">
+<img src="../assets/BAB-09/image17.png" alt="image17.png" width="646">
 
 *Gambar 9.16 Penulisan konfigurasi orkestrasi compose.yaml menggunakan editor nano.*
 
@@ -195,7 +193,7 @@ nano compose.yaml
 cat compose.yaml
 ```
 
-<img src="../assets/bab-09/image18.png" alt="image18.png" width="646">
+<img src="../assets/BAB-09/image18.png" alt="image18.png" width="646">
 
 *Gambar 9.17 Verifikasi orkestrasi layanan PostgreSQL, Keycloak, dan Flask pada compose.yaml.*
 
@@ -209,7 +207,7 @@ Dibuat file `scripts/generate-env.sh` menggunakan editor nano dan ditampilkan is
 nano scripts/generate-env.sh
 ```
 
-<img src="../assets/bab-09/image19.png" alt="image19.png" width="646">
+<img src="../assets/BAB-09/image19.png" alt="image19.png" width="646">
 
 *Gambar 9.18 Pembuatan skrip generator environment otomatis scripts/generate-env.sh.*
 
@@ -217,7 +215,7 @@ nano scripts/generate-env.sh
 cat scripts/generate-env.sh
 ```
 
-<img src="../assets/bab-09/image20.png" alt="image20.png" width="646">
+<img src="../assets/BAB-09/image20.png" alt="image20.png" width="646">
 
 *Gambar 9.19 Verifikasi logika pembangkitan password acak kriptografis dan izin chmod 600.*
 
@@ -229,7 +227,7 @@ Dibuat file `scripts/validate-lab.sh` untuk menjalankan pemeriksaan kebijakan ke
 nano scripts/validate-lab.sh
 ```
 
-<img src="../assets/bab-09/image21.png" alt="image21.png" width="646">
+<img src="../assets/BAB-09/image21.png" alt="image21.png" width="646">
 
 *Gambar 9.20 Pembuatan skrip validasi statis kebijakan OIDC dan RBAC scripts/validate-lab.sh.*
 
@@ -237,7 +235,7 @@ nano scripts/validate-lab.sh
 cat scripts/validate-lab.sh
 ```
 
-<img src="../assets/bab-09/image22.png" alt="image22.png" width="646">
+<img src="../assets/BAB-09/image22.png" alt="image22.png" width="646">
 
 *Gambar 9.21 Verifikasi logika pemeriksaan statis pada scripts/validate-lab.sh.*
 
@@ -249,7 +247,7 @@ Dibuat file `scripts/negative-tests.sh` untuk menguji penolakan otomatis terhada
 nano scripts/negative-tests.sh
 ```
 
-<img src="../assets/bab-09/image23.png" alt="image23.png" width="646">
+<img src="../assets/BAB-09/image23.png" alt="image23.png" width="646">
 
 *Gambar 9.22 Pembuatan skrip pengujian negatif otomatis scripts/negative-tests.sh.*
 
@@ -257,7 +255,7 @@ nano scripts/negative-tests.sh
 cat scripts/negative-tests.sh
 ```
 
-<img src="../assets/bab-09/image24.png" alt="image24.png" width="646">
+<img src="../assets/BAB-09/image24.png" alt="image24.png" width="646">
 
 *Gambar 9.23 Verifikasi implementasi 5 skenario negative testing pada scripts/negative-tests.sh.*
 
@@ -269,7 +267,7 @@ Dibuat file `scripts/collect-evidence.sh` untuk mengumpulkan seluruh bukti tekni
 nano scripts/collect-evidence.sh
 ```
 
-<img src="../assets/bab-09/image25.png" alt="image25.png" width="646">
+<img src="../assets/BAB-09/image25.png" alt="image25.png" width="646">
 
 *Gambar 9.24 Pembuatan skrip pengumpul artefak bukti teknis scripts/collect-evidence.sh.*
 
@@ -277,7 +275,7 @@ nano scripts/collect-evidence.sh
 cat scripts/collect-evidence.sh
 ```
 
-<img src="../assets/bab-09/image26.png" alt="image26.png" width="646">
+<img src="../assets/BAB-09/image26.png" alt="image26.png" width="646">
 
 *Gambar 9.25 Verifikasi logika sanitasi dan pengumpulan evidence pada scripts/collect-evidence.sh.*
 
@@ -294,7 +292,7 @@ ls -l .env
 sed -n 's/^\([^=]*\)=.*/\1=<REDACTED>/p' .env
 ```
 
-<img src="../assets/bab-09/image27.png" alt="image27.png" width="646">
+<img src="../assets/BAB-09/image27.png" alt="image27.png" width="646">
 
 *Gambar 9.26 Pemberian izin eksekusi skrip, pembuatan .env, dan verifikasi variabel tersensor.*
 
@@ -308,7 +306,7 @@ docker compose config --services
 docker compose config --images
 ```
 
-<img src="../assets/bab-09/image28.png" alt="image28.png" width="646">
+<img src="../assets/BAB-09/image28.png" alt="image28.png" width="646">
 
 *Gambar 9.27 Validasi statis kebijakan realm OIDC/RBAC dan verifikasi konfigurasi layanan Docker Compose.*
 
@@ -322,7 +320,7 @@ Setelah image aplikasi selesai dibangun, seluruh layanan dijalankan di latar bel
 docker compose pull
 ```
 
-<img src="../assets/bab-09/image29.png" alt="image29.png" width="646">
+<img src="../assets/BAB-09/image29.png" alt="image29.png" width="646">
 
 *Gambar 9.28 Pengunduhan image dependensi eksternal (PostgreSQL dan Keycloak).*
 
@@ -330,7 +328,7 @@ docker compose pull
 docker compose build --pull app
 ```
 
-<img src="../assets/bab-09/image30.png" alt="image30.png" width="646">
+<img src="../assets/BAB-09/image30.png" alt="image30.png" width="646">
 
 *Gambar 9.29 Proses build multi-stage Dockerfile aplikasi Flask (tahap builder).*
 
@@ -338,7 +336,7 @@ docker compose build --pull app
 docker compose build --pull app
 ```
 
-<img src="../assets/bab-09/image31.png" alt="image31.png" width="646">
+<img src="../assets/BAB-09/image31.png" alt="image31.png" width="646">
 
 *Gambar 9.30 Penyelesaian build image devsecops-bab09-flask:1.0.*
 
@@ -346,7 +344,7 @@ docker compose build --pull app
 docker compose up -d
 ```
 
-<img src="../assets/bab-09/image32.png" alt="image32.png" width="646">
+<img src="../assets/BAB-09/image32.png" alt="image32.png" width="646">
 
 *Gambar 9.31 Menjalankan seluruh layanan laboratorium di latar belakang.*
 
@@ -354,7 +352,7 @@ docker compose up -d
 docker compose ps
 ```
 
-<img src="../assets/bab-09/image33.png" alt="image33.png" width="646">
+<img src="../assets/BAB-09/image33.png" alt="image33.png" width="646">
 
 *Gambar 9.32 Pemeriksaan status aktif seluruh container pada stack devsecops-bab09.*
 
@@ -363,7 +361,7 @@ curl --fail http://localhost:5000/healthz
 curl -s http://keycloak.localhost:8080/realms/devsecops-lab/.well-known/openid-configuration | python3 -m json.tool | sed -n '1,30p'
 ```
 
-<img src="../assets/bab-09/image34.png" alt="image34.png" width="646">
+<img src="../assets/BAB-09/image34.png" alt="image34.png" width="646">
 
 *Gambar 9.33 Pengujian health endpoint aplikasi dan verifikasi OIDC discovery metadata Keycloak.*
 
@@ -379,7 +377,7 @@ Selanjutnya, dilakukan Logout SSO untuk mengakhiri sesi pada aplikasi sekaligus 
 # Mengakses antarmuka web Laboratorium IAM dan RBAC pada http://localhost:5000
 ```
 
-<img src="../assets/bab-09/image35.png" alt="image35.png" width="646">
+<img src="../assets/BAB-09/image35.png" alt="image35.png" width="646">
 
 *Gambar 9.34 Tampilan awal aplikasi Flask sebelum autentikasi (belum ada sesi lokal).*
 
@@ -387,7 +385,7 @@ Selanjutnya, dilakukan Logout SSO untuk mengakhiri sesi pada aplikasi sekaligus 
 # Pengalihan ke halaman autentikasi Keycloak devsecops-lab realm
 ```
 
-<img src="../assets/bab-09/image36.png" alt="image36.png" width="646">
+<img src="../assets/BAB-09/image36.png" alt="image36.png" width="646">
 
 *Gambar 9.35 Formulir login Keycloak untuk autentikasi pengguna mahasiswa1.*
 
@@ -395,7 +393,7 @@ Selanjutnya, dilakukan Logout SSO untuk mengakhiri sesi pada aplikasi sekaligus 
 # Verifikasi klaim sesi pengguna mahasiswa1 pada antarmuka aplikasi
 ```
 
-<img src="../assets/bab-09/image37.png" alt="image37.png" width="646">
+<img src="../assets/BAB-09/image37.png" alt="image37.png" width="646">
 
 *Gambar 9.36 Identitas tervalidasi pengguna mahasiswa1 dengan role viewer.*
 
@@ -403,7 +401,7 @@ Selanjutnya, dilakukan Logout SSO untuk mengakhiri sesi pada aplikasi sekaligus 
 curl -b cookies.txt http://localhost:5000/viewer
 ```
 
-<img src="../assets/bab-09/image38.png" alt="image38.png" width="646">
+<img src="../assets/BAB-09/image38.png" alt="image38.png" width="646">
 
 *Gambar 9.37 Akses endpoint /viewer berhasil dengan respons HTTP 200 untuk mahasiswa1.*
 
@@ -411,7 +409,7 @@ curl -b cookies.txt http://localhost:5000/viewer
 curl -b cookies.txt http://localhost:5000/admin
 ```
 
-<img src="../assets/bab-09/image39.png" alt="image39.png" width="646">
+<img src="../assets/BAB-09/image39.png" alt="image39.png" width="646">
 
 *Gambar 9.38 Akses endpoint /admin ditolak dengan HTTP 403 Forbidden untuk mahasiswa1.*
 
@@ -419,7 +417,7 @@ curl -b cookies.txt http://localhost:5000/admin
 # Logout SSO dan pengalihan kembali ke formulir login Keycloak untuk akun adminlab
 ```
 
-<img src="../assets/bab-09/image40.png" alt="image40.png" width="646">
+<img src="../assets/BAB-09/image40.png" alt="image40.png" width="646">
 
 *Gambar 9.39 Formulir login Keycloak untuk autentikasi pengguna adminlab.*
 
@@ -427,7 +425,7 @@ curl -b cookies.txt http://localhost:5000/admin
 # Verifikasi klaim sesi pengguna adminlab pada antarmuka aplikasi
 ```
 
-<img src="../assets/bab-09/image41.png" alt="image41.png" width="646">
+<img src="../assets/BAB-09/image41.png" alt="image41.png" width="646">
 
 *Gambar 9.40 Identitas tervalidasi pengguna adminlab dengan peran admin dan viewer.*
 
@@ -435,7 +433,7 @@ curl -b cookies.txt http://localhost:5000/admin
 curl -b cookies.txt http://localhost:5000/viewer
 ```
 
-<img src="../assets/bab-09/image42.png" alt="image42.png" width="646">
+<img src="../assets/BAB-09/image42.png" alt="image42.png" width="646">
 
 *Gambar 9.41 Akses endpoint /viewer berhasil dengan respons HTTP 200 untuk adminlab.*
 
@@ -443,7 +441,7 @@ curl -b cookies.txt http://localhost:5000/viewer
 curl -b cookies.txt http://localhost:5000/admin
 ```
 
-<img src="../assets/bab-09/image43.png" alt="image43.png" width="646">
+<img src="../assets/BAB-09/image43.png" alt="image43.png" width="646">
 
 *Gambar 9.42 Akses endpoint /admin berhasil dengan respons HTTP 200 untuk adminlab.*
 
@@ -455,7 +453,7 @@ Dilakukan pengujian negatif secara otomatis melalui terminal dengan menjalankan 
 ./scripts/negative-tests.sh | tee reports/negative-tests.txt
 ```
 
-<img src="../assets/bab-09/image44.png" alt="image44.png" width="646">
+<img src="../assets/BAB-09/image44.png" alt="image44.png" width="646">
 
 *Gambar 9.43 Hasil eksekusi 5 skenario negative testing otomatis keamanan OIDC dan RBAC.*
 
@@ -469,7 +467,7 @@ Selanjutnya, pemeriksaan ke database PostgreSQL melalui perintah `docker compose
 docker compose exec app id
 ```
 
-<img src="../assets/bab-09/image45.png" alt="image45.png" width="646">
+<img src="../assets/BAB-09/image45.png" alt="image45.png" width="646">
 
 *Gambar 9.44 Pemeriksaan identitas non-root UID dan GID 10001 pada container aplikasi.*
 
@@ -477,7 +475,7 @@ docker compose exec app id
 docker inspect devsecops-bab09-app-1 --format 'ReadOnly={{.HostConfig.ReadonlyRootfs}} CapDrop={{json .HostConfig.CapDrop}} Pids={{.HostConfig.PidsLimit}} Memory={{.HostConfig.Memory}}'
 ```
 
-<img src="../assets/bab-09/image46.png" alt="image46.png" width="646">
+<img src="../assets/BAB-09/image46.png" alt="image46.png" width="646">
 
 *Gambar 9.45 Verifikasi atribut hardening HostConfig container aplikasi.*
 
@@ -486,7 +484,7 @@ docker compose exec app sh -c 'touch /should-fail'
 docker compose exec app sh -c 'touch /tmp/allowed && ls -la /tmp/allowed'
 ```
 
-<img src="../assets/bab-09/image47.png" alt="image47.png" width="646">
+<img src="../assets/BAB-09/image47.png" alt="image47.png" width="646">
 
 *Gambar 9.46 Pembuktian penolakan write pada rootfs dan keberhasilan write pada tmpfs /tmp.*
 
@@ -494,7 +492,7 @@ docker compose exec app sh -c 'touch /tmp/allowed && ls -la /tmp/allowed'
 docker compose exec db psql -U keycloak -d keycloak -c 'SELECT COUNT(*) AS realm_count FROM realm;'
 ```
 
-<img src="../assets/bab-09/image48.png" alt="image48.png" width="646">
+<img src="../assets/BAB-09/image48.png" alt="image48.png" width="646">
 
 *Gambar 9.47 Kueri database PostgreSQL membuktikan persistensi 2 realm Keycloak.*
 
@@ -502,7 +500,7 @@ docker compose exec db psql -U keycloak -d keycloak -c 'SELECT COUNT(*) AS realm
 docker compose restart keycloak
 ```
 
-<img src="../assets/bab-09/image49.png" alt="image49.png" width="646">
+<img src="../assets/BAB-09/image49.png" alt="image49.png" width="646">
 
 *Gambar 9.48 Restart container Keycloak untuk menguji integritas state persisten.*
 
@@ -510,7 +508,7 @@ docker compose restart keycloak
 curl --fail http://keycloak.localhost:8080/realms/devsecops-lab/.well-known/openid-configuration >/dev/null
 ```
 
-<img src="../assets/bab-09/image50.png" alt="image50.png" width="646">
+<img src="../assets/BAB-09/image50.png" alt="image50.png" width="646">
 
 *Gambar 9.49 Pengujian kesiapan dan respons metadata OIDC Keycloak setelah restart.*
 
@@ -523,7 +521,7 @@ Dilakukan pengumpulan seluruh bukti teknis praktikum dengan mengeksekusi script 
 find reports -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort
 ```
 
-<img src="../assets/bab-09/image51.png" alt="image51.png" width="646">
+<img src="../assets/BAB-09/image51.png" alt="image51.png" width="646">
 
 *Gambar 9.50 Eksekusi scripts/collect-evidence.sh dan inventarisasi 14 berkas bukti uji pada reports/.*
 
@@ -533,7 +531,7 @@ ls -l reports-manifest-sha256.txt
 head -n 15 reports-manifest-sha256.txt
 ```
 
-<img src="../assets/bab-09/image52.png" alt="image52.png" width="646">
+<img src="../assets/BAB-09/image52.png" alt="image52.png" width="646">
 
 *Gambar 9.51 Pembangkitan berkas manifes checksum SHA-256 untuk seluruh artefak evidence.*
 
@@ -545,6 +543,6 @@ Setelah seluruh rangkaian pengujian dan pengumpulan bukti selesai dilaksanakan, 
 docker compose down --remove-orphans
 ```
 
-<img src="../assets/bab-09/image53.png" alt="image53.png" width="646">
+<img src="../assets/BAB-09/image53.png" alt="image53.png" width="646">
 
 *Gambar 9.52 Penghentian dan penghapusan container laboratorium dengan docker compose down.*

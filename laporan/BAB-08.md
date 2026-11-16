@@ -1,5 +1,3 @@
-<p align="center"><img src="../assets/logo-pens.png" alt="Logo PENS" width="150"></p>
-
 # BAB VIII: HARDENING CONTAINER, SECRETS, TRIVY, DAN PRIVATE REGISTRY
 
 **Mata Kuliah:** Workshop DevOps  
@@ -26,7 +24,7 @@ mkdir -p ~/docker-lab/bab-8/{app,secrets,registry/certs,registry/auth,scripts,re
 cd ~/docker-lab/bab-8 && touch reports/.gitkeep
 ```
 
-<img src="../assets/bab-08/image2.png" alt="image2.png" width="646">
+<img src="../assets/BAB-08/image2.png" alt="image2.png" width="646">
 
 *Gambar 8.1 Hasil pembuatan struktur direktori kerja Bab 8 dan berkas penanda .gitkeep.*
 
@@ -38,7 +36,7 @@ Dilakukan pembuatan file `.env.example` menggunakan perintah `nano .env.example`
 nano .env.example
 ```
 
-<img src="../assets/bab-08/image3.png" alt="image3.png" width="646">
+<img src="../assets/BAB-08/image3.png" alt="image3.png" width="646">
 
 *Gambar 8.2 Pembuatan file konfigurasi .env.example menggunakan editor nano.*
 
@@ -48,7 +46,7 @@ chmod 600 .env
 ls -l .env
 ```
 
-<img src="../assets/bab-08/image4.png" alt="image4.png" width="646">
+<img src="../assets/BAB-08/image4.png" alt="image4.png" width="646">
 
 *Gambar 8.3 Penyalinan ke file .env, pengaturan izin chmod 600, dan verifikasi atribut hak akses.*
 
@@ -60,7 +58,7 @@ Diperlihatkan pembuatan dan isi file `.gitignore` menggunakan perintah `nano .gi
 nano .gitignore
 ```
 
-<img src="../assets/bab-08/image5.png" alt="image5.png" width="646">
+<img src="../assets/BAB-08/image5.png" alt="image5.png" width="646">
 
 *Gambar 8.4 Pembuatan file .gitignore menggunakan editor nano.*
 
@@ -68,7 +66,7 @@ nano .gitignore
 cat .gitignore
 ```
 
-<img src="../assets/bab-08/image6.png" alt="image6.png" width="646">
+<img src="../assets/BAB-08/image6.png" alt="image6.png" width="646">
 
 *Gambar 8.5 Verifikasi aturan pengabaian berkas sensitif dan artefak uji pada .gitignore.*
 
@@ -80,7 +78,7 @@ Diperlihatkan pembuatan dan isi file `.dockerignore` menggunakan perintah `nano 
 nano .dockerignore
 ```
 
-<img src="../assets/bab-08/image7.png" alt="image7.png" width="646">
+<img src="../assets/BAB-08/image7.png" alt="image7.png" width="646">
 
 *Gambar 8.6 Pembuatan aturan pembatasan build context pada .dockerignore menggunakan editor nano.*
 
@@ -88,7 +86,7 @@ nano .dockerignore
 cat .dockerignore
 ```
 
-<img src="../assets/bab-08/image8.png" alt="image8.png" width="646">
+<img src="../assets/BAB-08/image8.png" alt="image8.png" width="646">
 
 *Gambar 8.7 Verifikasi isi file .dockerignore untuk mengamankan proses build image.*
 
@@ -102,7 +100,7 @@ Dilakukan pembuatan file `app/requirements.txt` menggunakan editor nano dan dipe
 nano app/requirements.txt
 ```
 
-<img src="../assets/bab-08/image9.png" alt="image9.png" width="646">
+<img src="../assets/BAB-08/image9.png" alt="image9.png" width="646">
 
 *Gambar 8.8 Penulisan pustaka Flask dan gunicorn pada app/requirements.txt.*
 
@@ -110,7 +108,7 @@ nano app/requirements.txt
 cat app/requirements.txt
 ```
 
-<img src="../assets/bab-08/image10.png" alt="image10.png" width="646">
+<img src="../assets/BAB-08/image10.png" alt="image10.png" width="646">
 
 *Gambar 8.9 Verifikasi daftar paket pustaka terkunci pada app/requirements.txt.*
 
@@ -122,7 +120,7 @@ Dibuat kode sumber aplikasi utama pada file `app/app.py` menggunakan kerangka ke
 nano app/app.py
 ```
 
-<img src="../assets/bab-08/image11.png" alt="image11.png" width="646">
+<img src="../assets/BAB-08/image11.png" alt="image11.png" width="646">
 
 *Gambar 8.10 Penulisan kode sumber aplikasi Flask pada app/app.py.*
 
@@ -130,7 +128,7 @@ nano app/app.py
 cat app/app.py
 ```
 
-<img src="../assets/bab-08/image12.png" alt="image12.png" width="646">
+<img src="../assets/BAB-08/image12.png" alt="image12.png" width="646">
 
 *Gambar 8.11 Verifikasi implementasi endpoint dan penanganan secret pada app/app.py.*
 
@@ -142,7 +140,7 @@ Dibuat file `app/Dockerfile` dengan menerapkan teknik multi-stage build berbasis
 nano app/Dockerfile
 ```
 
-<img src="../assets/bab-08/image13.png" alt="image13.png" width="646">
+<img src="../assets/BAB-08/image13.png" alt="image13.png" width="646">
 
 *Gambar 8.12 Penulisan multi-stage Dockerfile pada app/Dockerfile menggunakan editor nano.*
 
@@ -150,7 +148,7 @@ nano app/Dockerfile
 cat app/Dockerfile
 ```
 
-<img src="../assets/bab-08/image14.png" alt="image14.png" width="646">
+<img src="../assets/BAB-08/image14.png" alt="image14.png" width="646">
 
 *Gambar 8.13 Verifikasi instruksi hardening dan pengguna non-root pada app/Dockerfile.*
 
@@ -162,7 +160,7 @@ Dilakukan pembuatan file template `secrets/app_secret.txt.example` berisi teks c
 nano secrets/app_secret.txt.example
 ```
 
-<img src="../assets/bab-08/image15.png" alt="image15.png" width="646">
+<img src="../assets/BAB-08/image15.png" alt="image15.png" width="646">
 
 *Gambar 8.14 Pembuatan template file secret secrets/app_secret.txt.example.*
 
@@ -172,7 +170,7 @@ chmod 600 secrets/app_secret.txt
 ls -l secrets/app_secret.txt
 ```
 
-<img src="../assets/bab-08/image16.png" alt="image16.png" width="646">
+<img src="../assets/BAB-08/image16.png" alt="image16.png" width="646">
 
 *Gambar 8.15 Pembangkitan secret acak 32-byte heksadesimal dan pembatasan izin chmod 600.*
 
@@ -186,7 +184,7 @@ Layanan kedua yaitu `registry` menggunakan image `registry:3.1.1` yang diamankan
 nano compose.yaml
 ```
 
-<img src="../assets/bab-08/image17.png" alt="image17.png" width="646">
+<img src="../assets/BAB-08/image17.png" alt="image17.png" width="646">
 
 *Gambar 8.16 Penyusunan konfigurasi layanan compose.yaml menggunakan editor nano.*
 
@@ -195,7 +193,7 @@ cat compose.yaml
 docker compose config --quiet
 ```
 
-<img src="../assets/bab-08/image18.png" alt="image18.png" width="646">
+<img src="../assets/BAB-08/image18.png" alt="image18.png" width="646">
 
 *Gambar 8.17 Verifikasi konfigurasi orkestrasi layanan compose.yaml.*
 
@@ -209,7 +207,7 @@ Dibuat script `scripts/generate-registry-assets.sh` dan diperiksa sintaksnya men
 nano scripts/generate-registry-assets.sh
 ```
 
-<img src="../assets/bab-08/image19.png" alt="image19.png" width="646">
+<img src="../assets/BAB-08/image19.png" alt="image19.png" width="646">
 
 *Gambar 8.18 Pembuatan script otomasi sertifikat dan akun registry scripts/generate-registry-assets.sh.*
 
@@ -217,7 +215,7 @@ nano scripts/generate-registry-assets.sh
 bash -n scripts/generate-registry-assets.sh
 ```
 
-<img src="../assets/bab-08/image20.png" alt="image20.png" width="646">
+<img src="../assets/BAB-08/image20.png" alt="image20.png" width="646">
 
 *Gambar 8.19 Validasi sintaks script generate-registry-assets.sh.*
 
@@ -230,7 +228,7 @@ chmod +x scripts/scan-image.sh
 bash -n scripts/scan-image.sh
 ```
 
-<img src="../assets/bab-08/image21.png" alt="image21.png" width="646">
+<img src="../assets/BAB-08/image21.png" alt="image21.png" width="646">
 
 *Gambar 8.20 Pembuatan, pemberian izin eksekusi, dan validasi sintaks scripts/scan-image.sh.*
 
@@ -243,7 +241,7 @@ chmod +x scripts/push-registry.sh
 bash -n scripts/push-registry.sh
 ```
 
-<img src="../assets/bab-08/image22.png" alt="image22.png" width="646">
+<img src="../assets/BAB-08/image22.png" alt="image22.png" width="646">
 
 *Gambar 8.21 Pembuatan, pemberian izin eksekusi, dan validasi sintaks scripts/push-registry.sh.*
 
@@ -256,7 +254,7 @@ chmod +x scripts/verify-hardening.sh
 bash -n scripts/verify-hardening.sh
 ```
 
-<img src="../assets/bab-08/image23.png" alt="image23.png" width="646">
+<img src="../assets/BAB-08/image23.png" alt="image23.png" width="646">
 
 *Gambar 8.22 Pembuatan, pemberian izin eksekusi, dan validasi sintaks scripts/verify-hardening.sh.*
 
@@ -274,7 +272,7 @@ docker compose config --quiet
 ls -l scripts/*.sh
 ```
 
-<img src="../assets/bab-08/image24.png" alt="image24.png" width="646">
+<img src="../assets/BAB-08/image24.png" alt="image24.png" width="646">
 
 *Gambar 8.23 Pemberian hak eksekusi dan validasi statis seluruh berkas script dan kode sumber.*
 
@@ -286,7 +284,7 @@ Dilakukan eksekusi script `./scripts/generate-registry-assets.sh` untuk membangk
 ./scripts/generate-registry-assets.sh
 ```
 
-<img src="../assets/bab-08/image25.png" alt="image25.png" width="646">
+<img src="../assets/BAB-08/image25.png" alt="image25.png" width="646">
 
 *Gambar 8.24 Eksekusi script generate-registry-assets.sh (tahap pembuatan kunci TLS).*
 
@@ -294,7 +292,7 @@ Dilakukan eksekusi script `./scripts/generate-registry-assets.sh` untuk membangk
 ./scripts/generate-registry-assets.sh
 ```
 
-<img src="../assets/bab-08/image26.png" alt="image26.png" width="646">
+<img src="../assets/BAB-08/image26.png" alt="image26.png" width="646">
 
 *Gambar 8.25 Penyelesaian pembuatan sertifikat self-signed dan akun autentikasi htpasswd private registry.*
 
@@ -306,7 +304,7 @@ Dilakukan pemeriksaan metadata sertifikat TLS yang telah dibuat menggunakan peri
 openssl x509 -in registry/certs/domain.crt -noout -subject -issuer -dates -ext subjectAltName
 ```
 
-<img src="../assets/bab-08/image27.png" alt="image27.png" width="646">
+<img src="../assets/BAB-08/image27.png" alt="image27.png" width="646">
 
 *Gambar 8.26 Pemeriksaan detail subjek, penerbit, masa aktif, dan SAN sertifikat TLS registry.*
 
@@ -323,7 +321,7 @@ ps -p 1 -o comm=
 systemctl is-active docker
 ```
 
-<img src="../assets/bab-08/image28.png" alt="image28.png" width="646">
+<img src="../assets/BAB-08/image28.png" alt="image28.png" width="646">
 
 *Gambar 8.27 Penempatan sertifikat CA ke direktori trust Docker Engine dan verifikasi layanan.*
 
@@ -337,7 +335,7 @@ systemctl is-active docker
 docker ps
 ```
 
-<img src="../assets/bab-08/image29.png" alt="image29.png" width="646">
+<img src="../assets/BAB-08/image29.png" alt="image29.png" width="646">
 
 *Gambar 8.28 Restart layanan daemon Docker dan konfirmasi kesiapan runtime.*
 
@@ -353,7 +351,7 @@ Selanjutnya, pemeriksaan status layanan menggunakan perintah `docker compose ps`
 docker compose build --pull app
 ```
 
-<img src="../assets/bab-08/image30.png" alt="image30.png" width="646">
+<img src="../assets/BAB-08/image30.png" alt="image30.png" width="646">
 
 *Gambar 8.29 Proses build multi-stage image pens-web:1.0.*
 
@@ -362,7 +360,7 @@ docker compose up -d app registry
 docker compose ps
 ```
 
-<img src="../assets/bab-08/image31.png" alt="image31.png" width="646">
+<img src="../assets/BAB-08/image31.png" alt="image31.png" width="646">
 
 *Gambar 8.30 Menjalankan layanan aplikasi dan registry serta verifikasi status container.*
 
@@ -370,7 +368,7 @@ docker compose ps
 curl --fail --silent --show-error http://127.0.0.1:8088/ | python3 -m json.tool
 ```
 
-<img src="../assets/bab-08/image32.png" alt="image32.png" width="646">
+<img src="../assets/BAB-08/image32.png" alt="image32.png" width="646">
 
 *Gambar 8.31 Respons JSON endpoint aplikasi menampilkan identitas non-root UID 10001 dan secret terpasang.*
 
@@ -382,7 +380,7 @@ Dilakukan pengujian ketahanan keamanan container dengan mengeksekusi script `./s
 ./scripts/verify-hardening.sh
 ```
 
-<img src="../assets/bab-08/image33.png" alt="image33.png" width="646">
+<img src="../assets/BAB-08/image33.png" alt="image33.png" width="646">
 
 *Gambar 8.32 Hasil pengujian ketahanan keamanan (11 security controls) dan negative test container.*
 
@@ -396,7 +394,7 @@ docker image inspect pens-web:1.0 --format '{{json .Config}}' > reports/app-imag
 ls -lh reports/app-hostconfig.json reports/app-image-config.json
 ```
 
-<img src="../assets/bab-08/image34.png" alt="image34.png" width="646">
+<img src="../assets/BAB-08/image34.png" alt="image34.png" width="646">
 
 *Gambar 8.33 Penyimpanan konfigurasi runtime container HostConfig dan konfigurasi image ke folder reports.*
 
@@ -408,7 +406,7 @@ Dilakukan pemindaian menyeluruh terhadap arsip image, konfigurasi, dan kode sumb
 ./scripts/scan-image.sh
 ```
 
-<img src="../assets/bab-08/image35.png" alt="image35.png" width="646">
+<img src="../assets/BAB-08/image35.png" alt="image35.png" width="646">
 
 *Gambar 8.34 Pemindaian kerentanan, miskonfigurasi, dan secret pada image menggunakan Trivy.*
 
@@ -416,7 +414,7 @@ Dilakukan pemindaian menyeluruh terhadap arsip image, konfigurasi, dan kode sumb
 ./scripts/scan-image.sh
 ```
 
-<img src="../assets/bab-08/image36.png" alt="image36.png" width="646">
+<img src="../assets/BAB-08/image36.png" alt="image36.png" width="646">
 
 *Gambar 8.35 Evaluasi Security Gate Trivy dan pembuatan SBOM CycloneDX serta SHA256SUMS.*
 
@@ -429,7 +427,7 @@ curl --silent --output /dev/null --write-out 'HTTP %{http_code}\n' --cacert regi
 ./scripts/push-registry.sh
 ```
 
-<img src="../assets/bab-08/image37.png" alt="image37.png" width="646">
+<img src="../assets/BAB-08/image37.png" alt="image37.png" width="646">
 
 *Gambar 8.36 Pengujian penolakan akses anonim HTTP 401 dan pengunggahan serta verifikasi image pada private registry.*
 
@@ -441,7 +439,7 @@ Dilakukan pemeriksaan akhir untuk memastikan bahwa berkas secret tidak ikut tert
 docker history --no-trunc pens-web:1.0 | tee reports/docker-history.txt
 ```
 
-<img src="../assets/bab-08/image38.png" alt="image38.png" width="646">
+<img src="../assets/BAB-08/image38.png" alt="image38.png" width="646">
 
 *Gambar 8.37 Pemeriksaan riwayat instruksi layer image pens-web:1.0 untuk membuktikan ketiadaan secret.*
 
@@ -449,6 +447,6 @@ docker history --no-trunc pens-web:1.0 | tee reports/docker-history.txt
 docker run --rm --entrypoint sh pens-web:1.0 -c 'test ! -e /run/secrets/app_secret && test ! -d /secrets'
 ```
 
-<img src="../assets/bab-08/image39.png" alt="image39.png" width="646">
+<img src="../assets/BAB-08/image39.png" alt="image39.png" width="646">
 
 *Gambar 8.38 Verifikasi runtime assertion ketiadaan file dan direktori secret di dalam container.*
