@@ -1,4 +1,5 @@
 # BAB VII: MONITORING RESOURCE DENGAN PROMETHEUS, CADVISOR, NODE EXPORTER, DAN GRAFANA
+![](../assets/BAB-01/image-001.png)
 
 **Mata Kuliah:** Workshop DevOps  
 **Dosen Pengampu:** Dr. Ferry Astika Saputra, ST, M.Sc  
