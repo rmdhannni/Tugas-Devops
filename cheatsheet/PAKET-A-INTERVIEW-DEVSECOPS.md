@@ -142,16 +142,48 @@ ORDER BY time DESC
 LIMIT 20;
 ```
 
-### Konsep yang harus dijelaskan
+### Konfigurasi aktual pada lab
 
-- **Memory buffer:** data ditahan di memori dan dapat dibatasi menggunakan konfigurasi seperti `Mem_Buf_Limit`. Data dalam memori berisiko hilang jika proses/container berhenti secara tidak terduga.
-- **Filesystem buffering:** data dapat ditahan pada filesystem jika konfigurasi seperti `storage.type filesystem` dan `storage.path` diaktifkan. Ketahanan tetap bergantung pada konfigurasi, kapasitas disk, dan kondisi storage.
-- **Retry:** Fluent Bit mencoba mengirim ulang record ketika output belum tersedia.
-- **Backlog recovery:** setelah PostgreSQL pulih, record yang tertahan seharusnya kembali dikirim sesuai konfigurasi.
+Berdasarkan pemeriksaan `fluent-bit/fluent-bit.conf` pada lab, konfigurasi yang ditemukan adalah:
+
+```ini
+storage.path              /var/log/flb-storage
+Mem_Buf_Limit 10M
+storage.type  filesystem
+```
+
+Interpretasinya:
+
+- `storage.path /var/log/flb-storage` menetapkan direktori penyimpanan chunk/buffer filesystem di dalam container Fluent Bit. Pastikan direktori ini memiliki permission yang sesuai dan, jika ingin bertahan melewati penggantian container, lokasi tersebut perlu didukung volume/persistensi pada konfigurasi Docker.
+- `Mem_Buf_Limit 10M` menetapkan batas penggunaan memory buffer untuk input sebesar 10 MB. Ini bukan berarti kapasitas filesystem buffer hanya 10 MB.
+- `storage.type filesystem` mengaktifkan filesystem buffering untuk input tersebut.
+
+Hasil grep yang tidak menampilkan `Retry_Limit` berarti baris itu tidak ditemukan pada file yang diperiksa. Jangan menyimpulkan nilai retry tertentu tanpa memeriksa konfigurasi output dan default Fluent Bit yang berlaku. Secara umum output akan melakukan retry sesuai kebijakan retry yang dikonfigurasi.
+
+### Cara kerja script pengujian
+
+Script `scripts/test-buffering.sh` yang diperiksa melakukan urutan berikut:
+
+1. Membaca variabel database dari file `.env`.
+2. Menghitung jumlah record awal pada `logs.fluentbit`.
+3. Menghentikan service `postgres-db`.
+4. Menjalankan ulang `generator-auth`, `generator-api`, dan `generator-worker`.
+5. Menunggu 25 detik ketika PostgreSQL dihentikan.
+6. Menyalakan kembali PostgreSQL dan menunggu sampai `pg_isready` menyatakan database siap.
+7. Memeriksa jumlah record secara berkala. Script mengeluarkan PASS jika jumlah record bertambah.
+
+Jalankan dengan:
+
+```bash
+cd ~/docker-lab/bab-6
+bash scripts/test-buffering.sh
+```
+
+**Hal yang perlu diperhatikan:** script menghitung kenaikan total record, bukan mencocokkan identitas setiap log yang dibuat selama PostgreSQL mati. Karena itu, untuk bukti yang lebih kuat, cocokkan timestamp, tag, atau ID event dari log generator dengan record yang masuk setelah recovery. Periksa juga apakah menjalankan `docker compose up` untuk generator ikut menyalakan dependency PostgreSQL melalui `depends_on`; jika iya, skenario backend mati bisa tidak berlangsung sesuai rencana. Verifikasi dengan `docker compose ps -a` dan log aktual.
 
 ### Contoh jawaban lisan
 
-“Ketika PostgreSQL dihentikan, output Fluent Bit tidak dapat mengirim record sehingga terjadi retry dan data ditahan oleh mekanisme buffer yang dikonfigurasi. Setelah PostgreSQL hidup kembali, Fluent Bit melanjutkan pengiriman backlog. Saya membuktikannya dengan membandingkan log retry saat backend mati dan record yang masuk setelah backend pulih. Error koneksi sementara pada saat pengujian bukan otomatis berarti gagal.”
+“Pada lab saya, Fluent Bit menggunakan filesystem buffering dengan direktori `/var/log/flb-storage`, `storage.type filesystem`, dan batas memory buffer input 10 MB. Saat PostgreSQL dimatikan, Fluent Bit tidak dapat mengirim log ke output sehingga pengiriman akan dicoba kembali dan data ditahan sesuai mekanisme buffer. Script pengujian menghitung jumlah record awal, menghentikan PostgreSQL, menjalankan generator selama 25 detik, lalu menyalakan PostgreSQL kembali. Setelah database siap, script memeriksa apakah jumlah record bertambah. Untuk memastikan backlog benar-benar pulih, saya juga memeriksa log Fluent Bit dan mencocokkan record berdasarkan tag, waktu, atau ID event. Error koneksi sementara saat backend mati memang diharapkan dan bukan otomatis berarti pengujian gagal.”
 
 ### Kriteria PASS
 
