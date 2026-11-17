@@ -250,6 +250,45 @@ Sesuaikan label `job` berdasarkan konfigurasi Prometheus aktual.
 
 “Metric up menunjukkan hasil scrape Prometheus terhadap suatu target. Nilai 1 berarti scrape berhasil, sedangkan nilai 0 berarti scrape gagal. Namun, target yang UP belum tentu berarti aplikasi sehat secara bisnis. Contohnya endpoint metrics tetap merespons, tetapi proses pendaftaran pengguna mengalami timeout karena dependency lain bermasalah.”
 
+Maksud dari ratio_rate5m adalah nilai rasio penggunaan CPU yang dihitung berdasarkan perubahan data selama rentang waktu 5 menit terakhir.
+
+Kita pecah menjadi dua bagian:
+1. Ratio (rasio)
+Ratio berarti perbandingan penggunaan CPU terhadap total kapasitas CPU.
+
+Contoh:
+- 0.25 = CPU digunakan 25%.
+- 0.50 = CPU digunakan 50%.
+- 0.80 = CPU digunakan 80%.
+Jadi, hasilnya berupa angka desimal antara 0 sampai 1.
+2. Rate 5m
+rate5m mengacu pada perhitungan berdasarkan data dalam rentang 5 menit terakhir.
+
+Prometheus menggunakan data metric yang dikumpulkan secara berkala untuk menghitung tingkat perubahan selama rentang tersebut.
+
+Misalnya:
+Waktu	Penggunaan CPU
+14.00	20%
+14.01	30%
+14.02	40%
+14.03	35%
+14.04	50%
+
+Nilai yang dihasilkan merepresentasikan estimasi penggunaan CPU berdasarkan data dalam rentang tersebut, bukan hanya mengambil angka pada satu detik terakhir.
+3. Mengapa menggunakan 5 menit?
+Karena penggunaan CPU bisa naik turun dengan cepat.
+
+Dengan rentang 5 menit, monitoring dapat memberikan gambaran penggunaan CPU yang lebih stabil dan tidak terlalu terpengaruh lonjakan sesaat.
+
+Kesimpulan sederhana
+- Ratio: seberapa besar CPU digunakan dibandingkan kapasitas total.
+- Rate 5m: perhitungan berdasarkan perubahan data selama 5 menit terakhir.
+- Ratio_rate5m: rasio penggunaan CPU yang dihitung menggunakan data dalam jendela 5 menit.
+
+"ratio menunjukkan hasil dalam bentuk perbandingan atau persentase penggunaan CPU, sedangkan rate5m menunjukkan bahwa perhitungan menggunakan rentang data lima menit terakhir. Tujuannya agar monitoring penggunaan CPU memberikan gambaran kondisi yang lebih stabil, bukan hanya berdasarkan penggunaan CPU pada satu waktu tertentu."
+
+Catatan: secara teknis, rate() di PromQL menghitung laju perubahan counter per detik. Untuk metric CPU ini, nama rate5m merupakan bagian dari penamaan Recording Rule; rumus aslinya perlu dilihat untuk memastikan detail perhitungannya.
+
 ### Kriteria PASS
 
 - Mahasiswa dapat menampilkan daftar target Prometheus.
