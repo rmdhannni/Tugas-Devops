@@ -181,9 +181,9 @@ bash scripts/test-buffering.sh
 
 **Hal yang perlu diperhatikan:** script menghitung kenaikan total record, bukan mencocokkan identitas setiap log yang dibuat selama PostgreSQL mati. Karena itu, untuk bukti yang lebih kuat, cocokkan timestamp, tag, atau ID event dari log generator dengan record yang masuk setelah recovery. Periksa juga apakah menjalankan `docker compose up` untuk generator ikut menyalakan dependency PostgreSQL melalui `depends_on`; jika iya, skenario backend mati bisa tidak berlangsung sesuai rencana. Verifikasi dengan `docker compose ps -a` dan log aktual.
 
-### Contoh jawaban lisan
 
-“Pada lab saya, Fluent Bit menggunakan filesystem buffering dengan direktori `/var/log/flb-storage`, `storage.type filesystem`, dan batas memory buffer input 10 MB. Saat PostgreSQL dimatikan, Fluent Bit tidak dapat mengirim log ke output sehingga pengiriman akan dicoba kembali dan data ditahan sesuai mekanisme buffer. Script pengujian menghitung jumlah record awal, menghentikan PostgreSQL, menjalankan generator selama 25 detik, lalu menyalakan PostgreSQL kembali. Setelah database siap, script memeriksa apakah jumlah record bertambah. Untuk memastikan backlog benar-benar pulih, saya juga memeriksa log Fluent Bit dan mencocokkan record berdasarkan tag, waktu, atau ID event. Error koneksi sementara saat backend mati memang diharapkan dan bukan otomatis berarti pengujian gagal.”
+
+ Fluent Bit menggunakan filesystem buffering dengan direktori `/var/log/flb-storage`, `storage.type filesystem`, dan batas memory buffer input 10 MB. Saat PostgreSQL dimatikan, Fluent Bit tidak dapat mengirim log ke output sehingga pengiriman akan dicoba kembali dan data ditahan sesuai mekanisme buffer. Script pengujian menghitung jumlah record awal, menghentikan PostgreSQL, menjalankan generator selama 25 detik, lalu menyalakan PostgreSQL kembali. Setelah database siap, script memeriksa apakah jumlah record bertambah. Untuk memastikan backlog benar-benar pulih, saya juga memeriksa log Fluent Bit dan mencocokkan record berdasarkan tag, waktu, atau ID event. Error koneksi sementara saat backend mati memang diharapkan dan bukan otomatis berarti pengujian gagal.
 
 ### Kriteria PASS
 
