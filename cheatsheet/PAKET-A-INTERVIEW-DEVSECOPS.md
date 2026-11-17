@@ -18,6 +18,8 @@ Paket ini berisi lima soal pilihan dari cheatsheet utama: **Soal 1, 5, 13, 17, d
 
 ## Soal 1 – Bab 6: End-to-end centralized logging
 
+**Pertanyaan ujian:** Demonstrasikan dan jelaskan alur log secara end-to-end, mulai dari log yang dihasilkan container aplikasi hingga diterima Fluent Bit dan tersimpan di PostgreSQL. Tunjukkan bukti bahwa log dari generator benar-benar masuk ke database, serta jelaskan peran Docker logging driver dan Forward Protocol.
+
 ### Tujuan
 Membuktikan bahwa log dari aplikasi/container dapat melewati Docker logging driver, diterima Fluent Bit, lalu disimpan ke PostgreSQL.
 
@@ -92,6 +94,8 @@ Tag digunakan untuk membedakan sumber log. Nama service, alamat, port, database,
 
 ## Soal 5 – Bab 6: Buffering ketika backend mati
 
+**Pertanyaan ujian:** Demonstrasikan apa yang terjadi ketika backend PostgreSQL dimatikan saat Fluent Bit sedang menerima log. Jelaskan bagaimana mekanisme buffering/retry bekerja, bagaimana membedakan memory buffer dan filesystem buffering, serta buktikan bahwa backlog log berhasil dikirim setelah backend kembali pulih.
+
 ### Tujuan
 Membuktikan bahwa Fluent Bit dapat menahan atau melakukan retry pengiriman log saat PostgreSQL tidak tersedia, kemudian mengirim backlog setelah backend pulih.
 
@@ -163,6 +167,8 @@ LIMIT 20;
 
 ## Soal 13 – Bab 7: Status target dan metric `up`
 
+**Pertanyaan ujian:** Tunjukkan status target pada Prometheus dan jelaskan arti metric `up = 1` serta `up = 0`. Apakah seluruh target yang berstatus UP menjamin aplikasi sehat secara keseluruhan? Berikan alasan dan contoh.
+
 ### Tujuan
 Memeriksa status target Prometheus dan menjelaskan arti metric `up` untuk keberhasilan scrape.
 
@@ -222,6 +228,8 @@ Sesuaikan label `job` berdasarkan konfigurasi Prometheus aktual.
 ---
 
 ## Soal 17 – Bab 7: Negative test alert `TargetDown`
+
+**Pertanyaan ujian:** Lakukan negative test untuk alert `TargetDown` dengan menghentikan Node Exporter. Buktikan perubahan status alert hingga firing setelah durasi `for` terpenuhi, kemudian pulihkan exporter dan tunjukkan bahwa alert kembali resolved. Jelaskan apa yang dibuktikan dan yang belum dibuktikan oleh pengujian ini.
 
 ### Tujuan
 Membuktikan bahwa alert `TargetDown` berubah menjadi firing ketika target exporter tidak tersedia selama durasi yang ditentukan, kemudian pulih setelah exporter dijalankan kembali.
@@ -302,6 +310,8 @@ Jalankan kembali query `ALERTS{alertname="TargetDown"}` untuk mengamati perubaha
 ---
 
 ## Soal 21 – Portal PMB: Baseline transaksi normal
+
+**Pertanyaan ujian:** Jalankan skenario baseline transaksi normal pada Portal PMB. Gunakan `request_id` untuk menelusuri kronologi log pada `registration-api`, `auth-service`, dan `verification-worker`, lalu verifikasi status akhir transaksi pada database aplikasi. Jelaskan perbedaan event time, collector receive time, dan database insert time.
 
 ### Tujuan
 Membuktikan alur transaksi pendaftaran normal melalui log beberapa service dan status akhir transaksi pada database aplikasi.
